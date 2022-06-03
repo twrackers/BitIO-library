@@ -24,7 +24,7 @@ In an application where multiple processors will be acting as peripherals on the
 		. . .
 	}
 
-The four pins will be read in the order given and will be assigned from high to low order.  So if pins A0 and A1 were left unconnected (since all pins are in `INPUT_PULLUP` mode) and pins 8 and 9 were grounded, the BitIO `readByte()` method would return bits `1100` or hex value 0xC.  This would result in `i2cAddr` being set to `0x7C`.
+The four pins will be read in the order given and will be assigned from high to low order.  So if pins A0 and A1 were left unconnected (since all pins are set to `INPUT_PULLUP` mode in the class constructor) and pins 8 and 9 were grounded, the BitIO `readByte()` method would return bits `1100` or hex value 0xC.  This would result in `i2cAddr` being set to `0x7C`.
 
 This class *can* be used to read the assigned GPIO pins repeatedly in the `loop()` function, but it's more intended to be used only during initialization in `setup()`.
 
