@@ -17,8 +17,9 @@ In an application where multiple processors will be acting as peripherals on the
 		. . .
 		// A0 and A1 are 'analog input' GPIO on Arduino.
 		// All four bits can be used as digital inputs.
+		// DIM() macro defined in BitIO.h.
 		const int addrIn[] = {A0, A1, 8, 9};
-		BitIO addrBits(addr_in, 4);
+		BitIO addrBits(addrIn, DIM(addrIn));	// DIM returns 4 here
 		i2cAddr = i2cBaseAddr + addrBits.readByte();
 		. . .
 	}
